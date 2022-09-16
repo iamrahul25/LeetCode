@@ -6,7 +6,7 @@ public:
         int maxsum = nums[0];
 
 
-        //Edge Case: when all elements are negative
+        //Edge Case: When all the elements are negative. 
         int count = 0;
         int maxm = nums[0];
         for(int i=0; i<nums.size(); i++){
@@ -18,7 +18,6 @@ public:
                 break;
             }
         }
-
         if(count==nums.size()){
             return maxm;
         }

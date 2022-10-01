@@ -42,7 +42,6 @@ class Solution {
                             grid[a][b+1] = 0;
                         }
                     }
-            
                     st.insert(v);
                 }
             }

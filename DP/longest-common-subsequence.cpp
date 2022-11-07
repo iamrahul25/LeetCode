@@ -1,7 +1,8 @@
 class Solution {
 public:
     
-    //Approach 1: Recursion + Memoization --> TLE Error (42/45) Test Case Passed!
+    //Approach 1: Recursion + Memoization --> TLE Error (42/45) Test Case Passed! 
+    //Time: O(N^2) 
     
 //     int lcs(int i, int j, string s1, string s2, vector<vector<int>> &dp){
 //         //Base Case: 

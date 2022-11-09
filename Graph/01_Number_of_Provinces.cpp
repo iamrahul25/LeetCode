@@ -1,7 +1,7 @@
 class Solution {
 public:
     //***In this Problem we have to find number of disconnected graph. ***//
-    //Approach 2: BFS Traversal  
+    //Approach 2: BFS Traversal  (Breadth First Search) 
     
     
     

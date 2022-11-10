@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Time: O(N+M)  Space: O(N+M)
     int countWords(vector<string>& words1, vector<string>& words2) {
         unordered_map<string, int> mpp1;
         unordered_map<string, int> mpp2;

@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    //Approach 2:- Using Set and Time Complexity: O(N*N) 
+    //Approach 2:- Using Set and Time Complexity: O(N^2) 
     bool checkValid(vector<vector<int>>& matrix){
         int n = matrix.size();
         

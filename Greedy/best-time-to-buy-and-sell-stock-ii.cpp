@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    //Greedy Approach. Time: O(N)  and  Space: O(1) Complexity. 
+    //Greedy Approach. Time Complexity: O(N)  and  Space Complexity: O(1) Complexity. 
     int maxProfit(vector<int>& prices) {
         
         int res = 0; 

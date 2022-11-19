@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //Time : O(logN)  Space: O(1)
+    //Time Complexity : O(logN)  Space: O(1)
     int arrangeCoins(int n) {
         
         long long low = 1;

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //Approach 2: Using one Loop. Fast and Slow pointer. 
+    //Approach 2: Using one Loop. Fast and Slow pointer. Time: O(N)  Space: O(1)
     ListNode* middleNode(ListNode* head){
         ListNode *slow = head, *fast = head;
         

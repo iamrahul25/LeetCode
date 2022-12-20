@@ -1,49 +1,58 @@
 class Solution {
 public:
-    
-    // BFS Traversal   Time: O(N^2)  Space: O(N^2)
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color){
-        
-        int m = image.size();
-        int n = image[0].size();
-        
-        int x = image[sr][sc];
-        
-        if(x==color){
-            return image;
-        }
-        
-        queue<pair<int,int>> q;
-        q.push({sr, sc});
-        
-        image[sr][sc] = color;
-        
-        while(!q.empty()){
-            
-            int a = q.front().first;
-            int b = q.front().second;
+    //Approach 1: DFS Traversal
+    void dfs(int row, int col, vector<vector<int>>&grid, int color, int source){
+        grid[row][col] = color;
 
+        int arrx[] = {0,0,-1,+1};
+        int arry[] = {-1,+1,0,0};
+
+        int n = grid.size();
+        int m = grid[0].size();
+
+        for(int i=0; i<4; i++){
+            int x = arrx[i] + row;
+            int y = arry[i] + col;
+            if((x>=0 and x<n) and (y>=0 and y<m) and (grid[x][y]==source)){
+                dfs(x,y,grid,color,source);
+            }
+        }
+    }
+
+    //Approach 2: BFS Traversal
+    void bfs(int row, int col, vector<vector<int>>&grid, int color, int source){
+        grid[row][col] = color;
+        queue<pair<int,int>> q;
+        q.push({row, col});
+
+        int n = grid.size();
+        int m = grid[0].size();
+
+        int arrx[4] = {-1,+1,0,0};
+        int arry[4] = {0,0,-1,+1};
+
+        while(!q.empty()){
+            int i = q.front().first;
+            int j = q.front().second;
             q.pop();
 
-            if((a+1)<m and image[a+1][b]==x){
-                image[a+1][b] = color;
-                q.push({a+1,b});
-            }
-            if((a-1)>=0 and image[a-1][b]==x){
-                image[a-1][b] = color;
-                q.push({a-1,b});
-            }
-            if((b+1)<n and image[a][b+1]==x){
-                image[a][b+1] = color;
-                q.push({a,b+1});
-            }
+            for(int k=0; k<4; k++){
+                int x = arrx[k] + i;
+                int y = arry[k] + j;
 
-            if((b-1)>=0 and image[a][b-1]==x){
-                image[a][b-1] = color;
-                q.push({a,b-1});
+                if((x>=0 and x<n) and (y>=0 and y<m) and (grid[x][y]==source)){
+                    grid[x][y] = color;
+                    q.push({x,y});
+                }
             }
         }
-        
+    }
+
+    vector<vector<int>> floodFill(vector<vector<int>>&image, int sr, int sc, int color){
+        int source = image[sr][sc];
+        if(source==color) return image;
+
+        dfs(sr,sc,image,color,source); //Use BFS or DFS here! (Any one)
         return image;
     }
 };

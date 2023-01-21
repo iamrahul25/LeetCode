@@ -31,7 +31,7 @@ public:
     vector<string> restoreIpAddresses(string s) {
 
         int n = s.size();
-        if(n>12 and n<4) return {};
+        if(n>12 || n<4) return {};
 
         vector<string> ans;
         string s1,s2,s3,s4,s5;

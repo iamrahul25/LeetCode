@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    //Approach 2: Without Using Extra Space: Time: O(N) Space: O(1)
+    //Approach 2: Without Using Extra Space: Time: O(KN * logK) Space: O(1)
     ListNode* mergeTwoLists(ListNode* a, ListNode* b){
         if(a==NULL) return b;
         if(b==NULL) return a;

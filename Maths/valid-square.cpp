@@ -23,20 +23,8 @@ public:
 
 
     bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4) {
-        vector<vector<int>> vec(4);
-        vec[0] = p1;
-        vec[1] = p2;
-        vec[2] = p3; 
-        vec[3] = p4;
-
-        vector<int> arr = {0,1,2,3};
-        checkSquare(p1,p4,p2,p3);
-
-        do{
-            if(checkSquare(vec[arr[0]], vec[arr[1]], vec[arr[2]], vec[arr[3]])){
-                return true;
-            }
-        }while(next_permutation(arr.begin(), arr.end()));
+        
+        if(checkSquare(p1,p2,p3,p4) || checkSquare(p1,p3,p2,p4) || checkSquare(p1,p2,p4,p3)) return true;
 
         return false;
     }
